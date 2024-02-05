@@ -59,6 +59,7 @@ export class TransactionService {
     await this.transactionRepository.save(transaction);
 
     // Atualiza o saldo da conta
+    account.balance = Number(account.balance);
     if (isCreditOperation) {
       account.balance += amount;
     } else if (isWithdrawOperation) {

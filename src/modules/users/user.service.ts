@@ -9,6 +9,7 @@ import { User } from '../../entities/user.entity';
 import * as bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
 import { CreateUserDto } from './dtos/create-user.dto';
+import { auth } from '@/config';
 
 @Injectable()
 export class UserService {
@@ -34,7 +35,7 @@ export class UserService {
 
   async generateToken(user: User): Promise<string> {
     const payload = { username: user.username, sub: user.id };
-    return jwt.sign(payload, 'segredo', { expiresIn: '1h' });
+    return jwt.sign(payload, auth.secret, { expiresIn: auth.expirationTime });
   }
 
   async login(username: string, password: string): Promise<string> {

@@ -8,6 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from '@/entities/user.entity';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
+import { auth } from '@/config';
 
 @Module({
   imports: [
@@ -17,8 +18,8 @@ import { AuthController } from './auth.controller';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
-        secret: configService.get<string>('segredo'),
-        signOptions: { expiresIn: '1h' },
+        secret: configService.get<string>(auth.secret),
+        signOptions: { expiresIn: auth.expirationTime },
       }),
     }),
     ConfigModule,
