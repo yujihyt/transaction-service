@@ -1,5 +1,3 @@
-// src/modules/accounts/account.service.ts
-
 import {
   Injectable,
   NotFoundException,

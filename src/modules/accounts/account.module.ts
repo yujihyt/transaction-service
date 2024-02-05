@@ -1,5 +1,3 @@
-// src/modules/accounts/account.module.ts
-
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AccountController } from './account.controller';

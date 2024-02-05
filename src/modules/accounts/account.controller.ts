@@ -1,5 +1,3 @@
-// src/modules/accounts/account.controller.ts
-
 import { Controller, Get, Param, UseGuards, Req } from '@nestjs/common';
 import { AccountService } from './account.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';

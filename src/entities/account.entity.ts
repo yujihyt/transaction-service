@@ -1,5 +1,3 @@
-// src/entities/account.entity.ts
-
 import {
   Entity,
   Column,

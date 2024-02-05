@@ -1,5 +1,3 @@
-// src/modules/auth/auth.service.ts
-
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import * as jwt from 'jsonwebtoken';
 
